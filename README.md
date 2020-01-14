@@ -1,2 +1,4 @@
 # prestige-rankings
-Used to approximate the relative experience and accomplishments of teams for the interface
+Will be used in the picklist to automatically rank teams by historical relative experience and accomplishments.
+
+Utilizes the Blue Alliance API.
