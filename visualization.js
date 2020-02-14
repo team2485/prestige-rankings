@@ -19,8 +19,11 @@ $(function() {
             col1.push(entry[i].content.$t);
             col2.push(entry[i+1].content.$t);
             col3.push(entry[i+2].content.$t);
+            $("table").append("<tr>Yes</tr>");
             col4.push(entry[i+3].content.$t);
         }
+
+        $("table").append("<tr>Yes</tr>");
 
         //Displaying the contents of the arrays
         console.log(col1);
@@ -35,7 +38,7 @@ function generateTable() {
     //var teams = [];
     //if(numberOfTeams > 0) {}
 
-    alert("Running");
+    $("table").append("<tr>Yes</tr>");
 
     //Table created if teams exist
     var table = document.createElement("table");
@@ -43,6 +46,4 @@ function generateTable() {
     table.setAttribute('border', '1');
     table.setAttribute('cellspacing', '0');
     table.setAttribute('cellpadding', '5');
-    
-    
 }
