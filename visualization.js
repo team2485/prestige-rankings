@@ -23,6 +23,7 @@ $(function() {
         output += "<table>";
 
         var newTableRow = false;
+        var firstTime = true;
 
         var b = 0;
         for(i = 0; i < entry.length; i++) {
@@ -30,22 +31,31 @@ $(function() {
             b++;
 
             if(b == 5) {
+                output += "</tr>";
+                firstTime = false;
                 b = 1;
                 newTableRow = true;
+                console.log("Row");
                 output += "<tr>";
             }
 
-            output += "<th>";
-            output += entry[i].content.$t;
-            output += "</th>";
-
-            if(newTableRow == true) {
-                output += "</tr>";
-                console.log("Row");
-                newTableRow = false;
+            if(firstTime) {
+                output += "<th>";
+                output += entry[i].content.$t;
+                output += "</th>";
+            } else {
+                if(b == 2) {
+                    output += "<td class=\"score\">";
+                    output += entry[i].content.$t;
+                    output += "</td>";
+                } else {
+                    output += "<td>";
+                    output += entry[i].content.$t;
+                    output += "</td>";
+                }
             }
 
-            console.log("#: " + b + " Entry " + entry[i].content.$t);
+            console.log("#: " + b + " Entry: " + entry[i].content.$t);
         }
         output += "</table>";
     
