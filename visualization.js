@@ -25,15 +25,15 @@ $(function() {
         var newTableRow = false;
         var firstTime = true;
 
-        var b = 0;
+        var colCount = -1;
         for(i = 0; i < entry.length; i++) {
 
-            b++;
+            colCount++;
 
-            if(b == 5) {
+            if(colCount == TABLE_COLUMNS) {
                 output += "</tr>";
                 firstTime = false;
-                b = 1;
+                colCount = 0;
                 newTableRow = true;
                 console.log("Row");
                 output += "<tr>";
@@ -44,7 +44,7 @@ $(function() {
                 output += entry[i].content.$t;
                 output += "</th>";
             } else {
-                if(b == 2) {
+                if(colCount == 1) {
                     output += "<td class=\"score\">";
                     output += entry[i].content.$t;
                     output += "</td>";
@@ -55,7 +55,7 @@ $(function() {
                 }
             }
 
-            console.log("#: " + b + " Entry: " + entry[i].content.$t);
+            console.log("#: " + colCount + " Entry: " + entry[i].content.$t);
         }
         output += "</table>";
     
