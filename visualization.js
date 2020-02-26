@@ -10,7 +10,7 @@ var col4 = [];
 
 var entry;
 
-var TABLE_COLUMNS = 4;
+var TABLE_COLUMNS = 13;
 
 $(function() {
     var sheetURL = 'https://spreadsheets.google.com/feeds/cells/1EMAV9BxUnAs-Jtvn6QsIpkik5LW6odRa8bLyxc4aMlw/1/public/full?alt=json';
